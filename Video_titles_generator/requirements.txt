@@ -1,0 +1,3 @@
+ggoogle-generativeai>=0.3.0
+pathlib>=1.0.1
+python-dotenv
