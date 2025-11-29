@@ -1,0 +1,20 @@
+# Ignore sensitive credential files anywhere in the repository
+**/**/token.json
+**/**/credentials.json
+**/**/.env
+# Ignore Python virtual environments relative to any unignored directory
+# The `**/` matches zero or more directories, so it works anywhere.
+**/**/venv/
+**/**/env/
+**/**/bin/
+**/**/lib/
+**/**/lib64/
+**/**/include/
+**/**/.Python
+**/**/pyvenv.cfg
+**/**/node_modules
+# Ignore Python packages (these are generally fine as is, applying anywhere)
+__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
