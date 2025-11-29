@@ -6,7 +6,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 dotenv.config();
 
-const defaultDirectory = '../in_production_content/downloaded_music/'
+const defaultDirectory = '../../in_production_content/downloaded_music/'
 
 // Gemini setup
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
