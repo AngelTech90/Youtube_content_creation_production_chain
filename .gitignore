@@ -1,7 +1,7 @@
 # Ignore sensitive credential files anywhere in the repository
-**/**/**/token.json
-**/**/**/**/token.json
-**/**/**/**/**/token.json
+**/**/**/youtube_token.json
+**/**/**/**/youtube_token.json
+**/**/**/**/**/youtube_token.json
 
 **/**/**/credentials.json
 **/**/**/credentials.json 
