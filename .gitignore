@@ -1,6 +1,13 @@
 # Ignore sensitive credential files anywhere in the repository
-**/**/token.json
-**/**/credentials.json
+**/**/**/token.json
+**/**/**/**/token.json
+**/**/**/**/**/token.json
+
+**/**/**/credentials.json
+**/**/**/credentials.json 
+**/**/**/**/credentials.json
+**/**/**/**/**/credentials.json
+
 **/**/.env
 # Ignore Python virtual environments relative to any unignored directory
 # The `**/` matches zero or more directories, so it works anywhere.
@@ -19,4 +26,16 @@ __pycache__/
 **/*.pyo
 **/*.pyd
 **/*lib64
+*.mp3
 **/*.mp3
+**/**/*.mp3
+**/**/**/.mp3
+**/**/**/**/*.mp3
+**/**/**/**/**/*.mp3
+
+*.mp4
+**/*.mp4
+**/**/*.mp4
+**/**/**/.mp4
+**/**/**/**/*.mp4
+**/**/**/**/**/*.mp4

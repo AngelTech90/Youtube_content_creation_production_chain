@@ -1,0 +1,194 @@
+{
+  "total_videos": 11,
+  "source_pickle": "../../Core_data_workflow/data_sets/transcription_20251129_163118_timestamps.pkl",
+  "download_date": "2025-11-29 16:40:05",
+  "videos": [
+    {
+      "query": "success mindset",
+      "original_name": "complementary_video_stamps_1",
+      "filename": "01_complementary_video_stamps_1.mp4",
+      "timestamps": [
+        "00:00",
+        "00:03"
+      ],
+      "video_info": {
+        "id": 9305618,
+        "url": "https://videos.pexels.com/video-files/9305618/9305618-uhd_4096_2160_30fps.mp4",
+        "width": 4096,
+        "height": 2160,
+        "duration": 11,
+        "quality": "uhd"
+      }
+    },
+    {
+      "query": "journey progress",
+      "original_name": "complementary_video_stamps_2",
+      "filename": "02_complementary_video_stamps_2.mp4",
+      "timestamps": [
+        "00:20",
+        "00:28"
+      ],
+      "video_info": {
+        "id": 2882114,
+        "url": "https://videos.pexels.com/video-files/2882114/2882114-uhd_3840_2160_24fps.mp4",
+        "width": 3840,
+        "height": 2160,
+        "duration": 15,
+        "quality": "uhd"
+      }
+    },
+    {
+      "query": "teamwork progress",
+      "original_name": "complementary_video_stamps_3",
+      "filename": "03_complementary_video_stamps_3.mp4",
+      "timestamps": [
+        "00:45",
+        "00:51"
+      ],
+      "video_info": {
+        "id": 32082737,
+        "url": "https://videos.pexels.com/video-files/32082737/13675721_1920_1080_25fps.mp4",
+        "width": 1920,
+        "height": 1080,
+        "duration": 20,
+        "quality": null
+      }
+    },
+    {
+      "query": "programming automation",
+      "original_name": "complementary_video_stamps_4",
+      "filename": "04_complementary_video_stamps_4.mp4",
+      "timestamps": [
+        "01:06",
+        "01:15"
+      ],
+      "video_info": {
+        "id": 5854603,
+        "url": "https://videos.pexels.com/video-files/5854603/5854603-uhd_4096_2160_24fps.mp4",
+        "width": 4096,
+        "height": 2160,
+        "duration": 9,
+        "quality": "uhd"
+      }
+    },
+    {
+      "query": "efficient workflow",
+      "original_name": "complementary_video_stamps_5",
+      "filename": "05_complementary_video_stamps_5.mp4",
+      "timestamps": [
+        "01:46",
+        "01:57"
+      ],
+      "video_info": {
+        "id": 32536795,
+        "url": "https://videos.pexels.com/video-files/32536795/13875319_3840_2160_25fps.mp4",
+        "width": 3840,
+        "height": 2160,
+        "duration": 12,
+        "quality": null
+      }
+    },
+    {
+      "query": "optimizer vs maximizer",
+      "original_name": "complementary_video_stamps_6",
+      "filename": "06_complementary_video_stamps_6.mp4",
+      "timestamps": [
+        "02:03",
+        "02:11"
+      ],
+      "video_info": {
+        "id": 7914851,
+        "url": "https://videos.pexels.com/video-files/7914851/7914851-hd_1920_1080_30fps.mp4",
+        "width": 1920,
+        "height": 1080,
+        "duration": 11,
+        "quality": "hd"
+      }
+    },
+    {
+      "query": "personal transformation",
+      "original_name": "complementary_video_stamps_7",
+      "filename": "07_complementary_video_stamps_7.mp4",
+      "timestamps": [
+        "02:24",
+        "02:35"
+      ],
+      "video_info": {
+        "id": 4718663,
+        "url": "https://videos.pexels.com/video-files/4718663/4718663-uhd_4096_2160_25fps.mp4",
+        "width": 4096,
+        "height": 2160,
+        "duration": 47,
+        "quality": "uhd"
+      }
+    },
+    {
+      "query": "purpose driven",
+      "original_name": "complementary_video_stamps_8",
+      "filename": "08_complementary_video_stamps_8.mp4",
+      "timestamps": [
+        "03:00",
+        "03:12"
+      ],
+      "video_info": {
+        "id": 4761818,
+        "url": "https://videos.pexels.com/video-files/4761818/4761818-uhd_4096_2160_25fps.mp4",
+        "width": 4096,
+        "height": 2160,
+        "duration": 49,
+        "quality": "uhd"
+      }
+    },
+    {
+      "query": "automation scripts",
+      "original_name": "complementary_video_stamps_9",
+      "filename": "09_complementary_video_stamps_9.mp4",
+      "timestamps": [
+        "03:25",
+        "03:35"
+      ],
+      "video_info": {
+        "id": 853919,
+        "url": "https://videos.pexels.com/video-files/853919/853919-hd_1920_1080_25fps.mp4",
+        "width": 1920,
+        "height": 1080,
+        "duration": 15,
+        "quality": "hd"
+      }
+    },
+    {
+      "query": "latin america",
+      "original_name": "complementary_video_stamps_10",
+      "filename": "10_complementary_video_stamps_10.mp4",
+      "timestamps": [
+        "03:42",
+        "03:50"
+      ],
+      "video_info": {
+        "id": 3002384,
+        "url": "https://videos.pexels.com/video-files/3002384/3002384-hd_1920_1080_25fps.mp4",
+        "width": 1920,
+        "height": 1080,
+        "duration": 17,
+        "quality": "hd"
+      }
+    },
+    {
+      "query": "achieve goals",
+      "original_name": "complementary_video_stamps_11",
+      "filename": "11_complementary_video_stamps_11.mp4",
+      "timestamps": [
+        "04:05",
+        "04:14"
+      ],
+      "video_info": {
+        "id": 5912047,
+        "url": "https://videos.pexels.com/video-files/5912047/5912047-uhd_4096_2160_25fps.mp4",
+        "width": 4096,
+        "height": 2160,
+        "duration": 16,
+        "quality": "uhd"
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+Pipeline started at Mon Dec  1 04:50:00 AM -04 2025
+Script directory: /home/general/Desktop/GitHub_repositories/Youtube_content_creation_production_chain/python_modules_production
+
+[04:50:00] Running: Video Subtitles Indexer
+[04:50:00] INFO: Module path: ./Videos_subtitles_indexer
+[05:24:07] ✓ Video Subtitles Indexer completed
+[05:24:08] Running: Video Titles Generator
+[05:24:08] INFO: Module path: ./Video_titles_generator
+[05:24:14] ✓ Video Titles Generator completed
+[05:24:14] Running: Videos Descriptions Generator
+[05:24:14] INFO: Module path: ./Videos_descriptions_generator
+[05:24:45] ✓ Videos Descriptions Generator completed
+[05:24:45] Running: Videos Hashtags Generator
+[05:24:45] INFO: Module path: ./Videos_hashtags_generator
+[05:25:11] ✓ Videos Hashtags Generator completed
+[05:25:11] Running: Video and Audio Mixer
+[05:25:11] INFO: Module path: ./Video_and_audio_mixer
+[05:25:23] ERROR: Video and Audio Mixer failed with status 1
+[05:25:23] WARNING: Continuing despite failure...
+[05:25:23] Running: YouTube Shorts Video Extractor
+[05:25:23] INFO: Module path: ./Youtube_shorts_video_extractor
+[05:25:26] ERROR: YouTube Shorts Video Extractor failed with status 1
+[05:25:26] WARNING: Continuing despite failure...
+[05:25:26] Running: YouTube Uploader
+[05:25:26] INFO: Module path: ./Youtube_uploader
+[05:26:00] ✓ YouTube Uploader completed

@@ -1,0 +1,22 @@
+[Script Info]
+Title: Auto-generated Subtitles
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Lato-Bold,130,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,2,10,10,20,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:32.00,0:00:34.00,Default,,0,0,0,,{\fad(400,400)}Limits don't exist
+Dialogue: 0,0:01:17.00,0:01:19.00,Default,,0,0,0,,{\fad(400,400)}Efficient = Do more work
+Dialogue: 0,0:02:45.00,0:02:47.00,Default,,0,0,0,,{\fad(400,400)}Journey, not the end
+Dialogue: 0,0:03:38.00,0:03:40.00,Default,,0,0,0,,{\fad(400,400)}Limited = Use your mind
+Dialogue: 0,0:04:46.00,0:04:48.00,Default,,0,0,0,,{\fad(400,400)}Success relies only on you
+Dialogue: 0,0:06:20.00,0:06:22.00,Default,,0,0,0,,{\fad(400,400)}Create your job
+Dialogue: 0,0:07:59.00,0:08:01.00,Default,,0,0,0,,{\fad(400,400)}Normal guy can get closer
+Dialogue: 0,0:08:36.00,0:08:38.00,Default,,0,0,0,,{\fad(400,400)}Let's get success together!

@@ -1,0 +1,8 @@
+requests>=2.31.0
+
+
+# Environment variables from .env file
+python-dotenv>=1.0.0
+
+# Core dependencies
+pathlib>=1.0.1
