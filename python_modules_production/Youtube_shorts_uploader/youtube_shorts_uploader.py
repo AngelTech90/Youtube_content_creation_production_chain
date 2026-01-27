@@ -1,8 +1,8 @@
+#!/usr/bin/env python3
 """
-YouTube Shorts Auto-Upload Script
-==================================
-This script automatically uploads YouTube Shorts with optimized metadata and settings
-specifically designed for the Shorts format.
+YouTube Shorts Auto-Upload Script with Package Management
+==========================================================
+This script automatically uploads YouTube Shorts from packages and marks them as uploaded.
 
 YouTube Shorts Requirements:
 - Video must be vertical (9:16 aspect ratio preferred)
@@ -15,15 +15,6 @@ Prerequisites:
 2. Enable YouTube Data API v3 in Google Cloud Console
 3. Create OAuth 2.0 credentials and download client_secrets.json
 4. Place client_secrets.json in the same directory as this script
-
-Important Notes:
-- Shorts are best discovered through the Shorts feed, not search
-- Use trending sounds and hashtags for better reach
-- First 3 seconds are crucial for retention
-- Vertical format (9:16) performs best
-
-Author: Your Name
-Repository: https://github.com/yourusername/youtube-shorts-uploader
 """
 
 import os
@@ -32,7 +23,9 @@ import time
 import random
 import http.client
 import httplib2
+import sys
 from pathlib import Path
+from typing import Optional, List
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 from googleapiclient.http import MediaFileUpload
@@ -45,9 +38,12 @@ YOUTUBE_UPLOAD_SCOPE = "https://www.googleapis.com/auth/youtube.upload"
 YOUTUBE_API_SERVICE_NAME = "youtube"
 YOUTUBE_API_VERSION = "v3"
 
+# Default paths
+DEFAULT_SHORTS_PACKAGES = Path("../../Upload_stage/shorts_packages")
+
 # File paths for OAuth credentials and tokens
-CLIENT_SECRETS_FILE = "client_secrets.json"
-TOKEN_FILE = "youtube_shorts_token.json"
+CLIENT_SECRETS_FILE = "credentials.json"
+TOKEN_FILE = "youtube_token.json"
 
 # Retry configuration for handling network issues during upload
 RETRIABLE_EXCEPTIONS = (
@@ -63,6 +59,29 @@ RETRIABLE_EXCEPTIONS = (
 )
 RETRIABLE_STATUS_CODES = [500, 502, 503, 504]
 MAX_RETRIES = 10
+
+
+def get_first_available_package_dir(base_path: Path) -> Optional[Path]:
+    """Get first directory in shorts_packages that doesn't have '_uploaded' suffix"""
+    if not base_path.exists():
+        return None
+    
+    # Get all subdirectories, sorted alphabetically
+    subdirs = sorted([d for d in base_path.iterdir() if d.is_dir()])
+    
+    for subdir in subdirs:
+        if '_uploaded' not in subdir.name:
+            return subdir
+    
+    return None
+
+
+def mark_package_as_uploaded(package_dir: Path) -> Path:
+    """Add '_uploaded' suffix to package directory name"""
+    new_name = package_dir.name + "_uploaded"
+    new_path = package_dir.parent / new_name
+    package_dir.rename(new_path)
+    return new_path
 
 
 def authenticate_youtube():
@@ -218,7 +237,6 @@ def validate_shorts_requirements(video_path):
         warnings.append(f"⚠ Large file size ({file_size_mb:.1f}MB). Shorts are usually under 50MB.")
     
     # Note: Aspect ratio and duration validation would require video processing libraries
-    # like moviepy or cv2, which are not included to keep dependencies minimal
     warnings.append("ℹ️  Remember: Shorts should be vertical (9:16), max 60 seconds")
     
     return True, "\n".join(warnings) if warnings else None
@@ -352,14 +370,12 @@ def upload_short_package(short_folder, privacy_status="public"):
     """
     Upload a complete YouTube Short package (video + metadata).
     
-    Note: Shorts don't use custom thumbnails - YouTube auto-generates them.
-    
     Expected folder structure:
         short_folder/
-            ├── short.mp4         (vertical video, max 60s)
-            ├── title.txt         (short catchy title)
-            ├── description.txt   (brief description)
-            └── hashtags.txt      (trending hashtags)
+            ├── short_01_*.mp4  (or any .mp4 file)
+            ├── title.txt       (optional, uses filename if missing)
+            ├── description.txt (optional)
+            └── tags.txt        (optional, hashtags)
     
     Args:
         short_folder: Path to folder containing Short assets
@@ -397,11 +413,11 @@ def upload_short_package(short_folder, privacy_status="public"):
     # Read metadata files
     title = read_text_file(folder_path / "title.txt")
     description = read_text_file(folder_path / "description.txt")
-    hashtags_text = read_text_file(folder_path / "hashtags.txt")
+    hashtags_text = read_text_file(folder_path / "tags.txt")
     
     # Use filename as fallback for title
     if not title:
-        title = video_file.stem
+        title = video_file.stem.replace('_', ' ')
         print(f"⚠ No title.txt found, using filename: {title}")
     else:
         print(f"✓ Title: {title}")
@@ -462,111 +478,58 @@ def upload_short_package(short_folder, privacy_status="public"):
     return video_id
 
 
-def batch_upload_shorts(shorts_folders, privacy_status="public", delay_seconds=60):
-    """
-    Upload multiple Shorts in batch with delays to respect API quotas.
-    
-    Args:
-        shorts_folders: List of folder paths containing Short packages
-        privacy_status: Privacy setting for all Shorts
-        delay_seconds: Delay between uploads (helps with quota management)
-    
-    Returns:
-        dict: Results with video IDs and success status
-    """
-    results = {
-        'successful': [],
-        'failed': [],
-        'total': len(shorts_folders)
-    }
-    
-    print(f"\n{'='*60}")
-    print(f"BATCH UPLOAD: Processing {len(shorts_folders)} Shorts")
-    print(f"{'='*60}\n")
-    
-    for i, folder in enumerate(shorts_folders, 1):
-        print(f"\n[{i}/{len(shorts_folders)}] Processing: {folder}")
-        
-        video_id = upload_short_package(folder, privacy_status)
-        
-        if video_id:
-            results['successful'].append({
-                'folder': folder,
-                'video_id': video_id,
-                'url': f"https://www.youtube.com/shorts/{video_id}"
-            })
-            print(f"✓ Success! Short {i}/{len(shorts_folders)} uploaded")
-        else:
-            results['failed'].append(folder)
-            print(f"✗ Failed: {folder}")
-        
-        # Add delay between uploads (except after last one)
-        if i < len(shorts_folders):
-            print(f"\nWaiting {delay_seconds} seconds before next upload...")
-            time.sleep(delay_seconds)
-    
-    # Print summary
-    print(f"\n{'='*60}")
-    print("BATCH UPLOAD SUMMARY")
-    print(f"{'='*60}")
-    print(f"✓ Successful: {len(results['successful'])}/{results['total']}")
-    print(f"✗ Failed: {len(results['failed'])}/{results['total']}")
-    
-    if results['successful']:
-        print("\n📊 Uploaded Shorts:")
-        for item in results['successful']:
-            print(f"   • {item['folder']}")
-            print(f"     └─ {item['url']}")
-    
-    if results['failed']:
-        print("\n❌ Failed uploads:")
-        for folder in results['failed']:
-            print(f"   • {folder}")
-    
-    print(f"\n{'='*60}\n")
-    
-    return results
-
-
 def main():
     """
-    Main function - Configure your Short upload here.
+    Main function - Automatically finds and uploads first available shorts package.
     """
-    print("YouTube Shorts Auto-Upload Script")
-    print("=" * 60)
+    print("\n" + "="*60)
+    print("YOUTUBE SHORTS AUTO-UPLOADER")
+    print("="*60 + "\n")
     
-    # CONFIGURATION - Modify these values
-    # =========================================================
+    # Configuration
+    PRIVACY_STATUS = "public"  # "public", "private", or "unlisted"
     
-    # Single Short upload
-    SHORT_FOLDER = "../../in_production_content/short_package"
+    # Find first available shorts package
+    print("Looking for shorts packages...")
+    package_dir = get_first_available_package_dir(DEFAULT_SHORTS_PACKAGES)
     
-    # Batch upload (uncomment to use)
-    # SHORTS_FOLDERS = [
-    #     "./short_1",
-    #     "./short_2",
-    #     "./short_3"
-    # ]
+    if not package_dir:
+        print("\n⚠ No available shorts packages found in:")
+        print(f"   {DEFAULT_SHORTS_PACKAGES}")
+        print("\nAll packages may already be uploaded (have '_uploaded' suffix)")
+        print("Script execution ended.")
+        sys.exit(0)
     
-    # Privacy: "public" (best for Shorts), "private", or "unlisted"
-    PRIVACY_STATUS = "public"
+    print(f"✓ Found package: {package_dir.name}\n")
     
-    # =========================================================
-    
-    # Single upload
-    video_id = upload_short_package(SHORT_FOLDER, privacy_status=PRIVACY_STATUS)
-    
-    # Batch upload (uncomment to use)
-    # results = batch_upload_shorts(SHORTS_FOLDERS, privacy_status=PRIVACY_STATUS)
-    
-    if video_id:
-        print("\n✅ SUCCESS! Your Short has been uploaded.")
-        print(f"Shorts URL: https://www.youtube.com/shorts/{video_id}")
-        print(f"Regular URL: https://www.youtube.com/watch?v={video_id}")
-        print("\n🚀 Remember: Shorts take time to get picked up by the algorithm!")
-        print("   Check back in a few hours to see performance.")
-    else:
-        print("\n❌ Upload failed. Please check the error messages above.")
+    # Upload the package
+    try:
+        video_id = upload_short_package(package_dir, privacy_status=PRIVACY_STATUS)
+        
+        if video_id:
+            print("\n✅ SUCCESS! Your Short has been uploaded.")
+            print(f"Shorts URL: https://www.youtube.com/shorts/{video_id}")
+            print(f"Regular URL: https://www.youtube.com/watch?v={video_id}")
+            
+            # Mark package as uploaded
+            print("\nMarking package as uploaded...")
+            new_path = mark_package_as_uploaded(package_dir)
+            print(f"✓ Renamed to: {new_path.name}")
+            
+            print("\n🚀 Remember: Shorts take time to get picked up by the algorithm!")
+            print("   Check back in a few hours to see performance.")
+            
+            print("\n" + "="*60)
+            print("✓ COMPLETE")
+            print("="*60 + "\n")
+            
+        else:
+            print("\n❌ Upload failed. Please check the error messages above.")
+            sys.exit(1)
+            
+    except Exception as e:
+        print(f"\n❌ Error: {e}")
+        sys.exit(1)
 
 
 if __name__ == "__main__":

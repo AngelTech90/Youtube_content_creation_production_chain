@@ -1,0 +1,9 @@
+Pipeline started at Thu Dec  4 11:46:10 PM -04 2025
+Script directory: /home/general/Desktop/GitHub_repositories/Youtube_content_creation_production_chain/python_modules_production
+
+[23:46:21] Running: Video Enhancer
+[23:46:21] INFO: Module path: ./FFMPEG_video_enhancer
+[00:35:09] ✓ Video Enhancer completed
+[00:35:09] Running: Video and Audio Mixer
+[00:35:10] INFO: Module path: ./Video_and_audio_mixer
+[00:37:42] ✓ Video and Audio Mixer completed

@@ -136,6 +136,64 @@ class YouTubeDescriptionGenerator:
 
         prompt = f"""You are a YouTube content expert. Create a compelling, SEO-optimized YouTube video description based on this transcription.
 
+Follow this templates depending of context in transcription:
+
+Template A — Educational / Problem-Solving Video:
+
+    If you're struggling with [core pain point], this video will give you the clarity you need.  
+Today I’ll show you how to go from [Point A] to [Point B] using a simple, practical approach.
+
+WHAT YOU’LL LEARN:
+• Why [pain point] keeps happening  
+• The steps to fix it without [common objection]  
+• What to focus on first if you want real, lasting results  
+
+WHO THIS IS FOR:
+[Describe niche briefly]. If that’s you, you’re in the right place.
+
+NEXT STEP:
+If you want deeper guidance, download my free resource here: [link]
+
+I help [your niche] achieve [specific transformation] using my [unique mechanism].  
+Subscribe if you want a clear path toward [result].
+
+
+Template B — Authority / Positioning Video:
+    
+    In this video, I break down the exact process I use to help my clients [achieve transformation].  
+If you feel stuck in [pain point], this will help you understand what's missing and what truly works.
+
+WHAT YOU'LL DISCOVER:
+• The biggest misconceptions about [topic]  
+• The proven method behind consistent results  
+• How to avoid the mistakes that most people make  
+
+ABOUT ME:
+I help [your niche] go from [Point A] to [Point B] without [objection].  
+My work is based on real client data, not theory.
+
+NEXT STEP:
+If you want help applying this to your life/business, you can join the waitlist or book a call here: [link]
+
+
+Template C — Conversion-Focused Video:
+    If you're ready to stop guessing and finally fix [pain point], this video will show you the exact path.  
+This is the same process I use inside my [offer/program].
+
+IN THIS VIDEO:
+• The step-by-step roadmap to go from [A] to [B]  
+• The unique method behind my clients’ results  
+• What to do this week to start seeing progress  
+
+READY FOR MORE?
+If you're serious about [achieving result], apply here to work with me: [link]
+
+I help [niche] solve [problem] with a clear, proven framework.  
+Subscribe for weekly videos that get straight to the point.
+
+
+
+
 Requirements:
 - 300–1000 words (optimal for SEO and engagement)
 - First 2–3 lines should be the hook (shown before "show more")

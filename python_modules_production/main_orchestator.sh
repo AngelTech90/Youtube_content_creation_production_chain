@@ -280,7 +280,7 @@ main() {
     echo "Script directory: $SCRIPT_DIR"
     echo "Pipeline started at $(date)" > "$LOG_FILE"
     echo "Script directory: $SCRIPT_DIR" >> "$LOG_FILE"
-    echo "" >> "$LOG_FILE"
+    echo "" >> "./log_files/$LOG_FILE"
     
     # Show process selection menu
     show_process_menu

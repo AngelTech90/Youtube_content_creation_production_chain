@@ -1,0 +1,9 @@
+Pipeline started at Sat Nov 29 10:46:00 PM -04 2025
+Script directory: /home/general/Desktop/GitHub_repositories/Youtube_content_creation_production_chain/python_modules_production
+
+[22:46:00] Running: NCS Video Downloader
+[22:46:00] INFO: Module directory: ../javascript_modules_production/NCS_video_downloader//NCS_video_finder_AI.js
+[22:46:00] WARNING: Directory not found: ../javascript_modules_production/NCS_video_downloader//NCS_video_finder_AI.js
+[22:46:00] WARNING: Skipping non-critical module...
+[22:46:00] Running: CleanvoiceAI Audio Enhancer
+[22:46:00] INFO: Module path: ./CleanvoiceAI_audio_enhancer

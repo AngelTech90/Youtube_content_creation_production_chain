@@ -1,0 +1,13 @@
+Pipeline started at Mon Dec  1 04:17:38 AM -04 2025
+Script directory: /home/general/Desktop/GitHub_repositories/Youtube_content_creation_production_chain/python_modules_production
+
+[04:17:38] Running: Video Subtitles Indexer
+[04:17:38] INFO: Module path: ./Videos_subtitles_indexer
+[04:17:47] ERROR: Video Subtitles Indexer failed with status 2
+[04:17:47] WARNING: Continuing despite failure...
+[04:17:47] Running: Video Titles Generator
+[04:17:47] INFO: Module path: ./Video_titles_generator
+[04:17:57] ERROR: Video Titles Generator failed with status 1
+[04:17:57] WARNING: Continuing despite failure...
+[04:17:57] Running: Videos Descriptions Generator
+[04:17:57] INFO: Module path: ./Videos_descriptions_generator

@@ -1,0 +1,16 @@
+Pipeline started at Mon Dec  1 09:37:37 AM -04 2025
+Script directory: /home/general/Desktop/GitHub_repositories/Youtube_content_creation_production_chain/python_modules_production
+
+[09:37:37] Running: Video enhancer
+[09:37:37] INFO: Module path: ./FFMPEG_video_enhancer
+[11:12:06] ✓ Video enhancer completed
+[11:12:06] Running: Video and Audio Mixer
+[11:12:06] INFO: Module path: ./Video_and_audio_mixer
+[11:14:02] ✓ Video and Audio Mixer completed
+[11:14:02] Running: YouTube Shorts Video Extractor
+[11:14:02] INFO: Module path: ./Youtube_shorts_video_extractor
+[11:14:54] ERROR: YouTube Shorts Video Extractor failed with status 1
+[11:14:54] WARNING: Continuing despite failure...
+[11:14:54] Running: YouTube Uploader
+[11:14:54] INFO: Module path: ./Youtube_uploader
+[11:15:00] ✓ YouTube Uploader completed

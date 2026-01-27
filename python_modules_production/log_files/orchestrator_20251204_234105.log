@@ -1,0 +1,11 @@
+Pipeline started at Thu Dec  4 11:41:05 PM -04 2025
+Script directory: /home/general/Desktop/GitHub_repositories/Youtube_content_creation_production_chain/python_modules_production
+
+[23:41:30] Running: Video Enhancer
+[23:41:30] INFO: Module path: ./FFMPEG_video_enhancer
+[23:41:33] ERROR: Video Enhancer failed with status 1
+[23:41:33] WARNING: Continuing despite failure...
+[23:41:33] Running: Video and Audio Mixer
+[23:41:33] INFO: Module path: ./Video_and_audio_mixer
+[23:41:37] ERROR: Video and Audio Mixer failed with status 1
+[23:41:37] WARNING: Continuing despite failure...

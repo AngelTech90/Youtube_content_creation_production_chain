@@ -1,0 +1,17 @@
+Pipeline started at Sat Nov 29 05:33:06 PM -04 2025
+Script directory: /home/general/Desktop/GitHub_repositories/Youtube_content_creation_production_chain/python_modules_production
+
+[17:33:06] Running: NCS Video Downloader
+[17:33:06] INFO: Module directory: ../javascript_modules_production/NCS_video_downloader//NCS_video_finder_AI.js
+[17:33:06] WARNING: Directory not found: ../javascript_modules_production/NCS_video_downloader//NCS_video_finder_AI.js
+[17:33:06] WARNING: Skipping non-critical module...
+[17:33:06] Running: CleanvoiceAI Audio Enhancer
+[17:33:06] INFO: Module path: ./CleanvoiceAI_audio_enhancer
+[17:33:11] ERROR: CleanvoiceAI Audio Enhancer failed with status 1
+[17:33:11] WARNING: Continuing despite failure...
+[17:33:11] Running: Video Clips Indexer
+[17:33:11] INFO: Module path: ./Video_clips_indexer
+[17:33:14] ERROR: Video Clips Indexer failed with status 1
+[17:33:14] WARNING: Continuing despite failure...
+[17:33:14] Running: Video Subtitles Indexer
+[17:33:14] INFO: Module path: ./Videos_subtitles_indexer

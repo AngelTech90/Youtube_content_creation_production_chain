@@ -1,0 +1,9 @@
+Pipeline started at Thu Dec  4 09:42:33 PM -04 2025
+Script directory: /home/general/Desktop/GitHub_repositories/Youtube_content_creation_production_chain/python_modules_production
+
+[21:43:15] Running: Video and Audio Separator
+[21:43:15] INFO: Module path: ./Video_and_audio_separator
+[21:44:27] ✓ Video and Audio Separator completed
+[21:44:27] Running: Video Enhancer
+[21:44:27] INFO: Module path: ./FFMPEG_video_enhancer
+[22:03:43] ✓ Video Enhancer completed

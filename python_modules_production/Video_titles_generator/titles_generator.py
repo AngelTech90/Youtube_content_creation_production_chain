@@ -94,14 +94,54 @@ class YouTubeTitleGenerator:
 
         prompt = f"""You are a YouTube content strategist expert. Analyze this video transcription and generate {num_titles} engaging, clickable YouTube video titles.
 
+Follow this template:
+
+
+1. TITLE TEMPLATES (High-Performance YouTube Titles)
+A. Problem–Solution Titles
+
+How to [Achieve Result] Without [Pain/Obstacle]
+
+The Simple Way to [Desired Outcome] (No Experience Needed)
+
+What I’d Do Today to [Fix Core Problem] Fast
+
+B. Error-Based Titles
+
+Stop Making These [#] Mistakes That Ruin Your [Goal]
+
+The Real Reason You're Not [Achieving Result] Yet
+
+[#] Things Keeping You Stuck in [Pain Point]
+
+C. Transformation / Promise Titles
+
+From [Point A] to [Point B]: The Framework That Works
+
+How I Help My Clients [Transformation] in [Timeframe]
+
+The System I Used to [Big Result] With a Small Audience
+
+D. Curiosity / Pattern-Interrupt Titles
+
+You Don’t Need to Be Viral to [Achieve Result]
+
+Everyone Does This Wrong When Trying to [Goal]
+
+Nobody Talks About This Part of [Topic] — But It Changes Everything
+
 Requirements for each title:
-- Between 50-60 characters (optimal for YouTube)
+- Between 50-55 characters (optimal for YouTube)
 - Include relevant keywords for SEO
 - Create curiosity or emotional appeal
 - Use power words (Amazing, Incredible, Best, Ultimate, etc.)
 - Be clear and descriptive
 - Avoid clickbait but be engaging
 - No special characters or emojis
+- Never add ":" in title 
+- never use emojis
+- Use upper word beig strategic
+- Don'r repeat what thumbnail uses
 
 Video Transcription:
 {transcription_text}

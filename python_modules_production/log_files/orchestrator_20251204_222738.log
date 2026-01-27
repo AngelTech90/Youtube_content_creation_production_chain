@@ -1,0 +1,6 @@
+Pipeline started at Thu Dec  4 10:27:38 PM -04 2025
+Script directory: /home/general/Desktop/GitHub_repositories/Youtube_content_creation_production_chain/python_modules_production
+
+[22:28:05] Running: Video and Audio Mixer
+[22:28:05] INFO: Module path: ./Video_and_audio_mixer
+[22:30:17] ✓ Video and Audio Mixer completed
