@@ -469,18 +469,14 @@ python mixer.py video.mp4 enhanced.mp3 -o final.mp4
 - **API Playground:** [https://app.cleanvoice.ai/playground/](https://app.cleanvoice.ai/playground/)
 - **Script Help:** `python cleanvoice_enhancer.py --help`
 - **Support:** support@cleanvoice.ai
-
-## License
-
-MIT License - Free for personal and commercial use
-
+- 
 ## Version
 
 Current Version: 2.0.0 (CleanVoice API v2)
 
 ## Author
 
-Video Enhancement Pipeline Project
+Angel Molina
 
 ---
 
