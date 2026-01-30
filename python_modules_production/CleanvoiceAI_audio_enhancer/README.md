@@ -18,5 +18,5 @@ We relay in our main class named **CleanVoiceEnhancer** were we define as main p
 
  ```
 
-It's very important define our properties as a **Path** because we'll use it for interact with directories for our local environment
+It's very important define our properties as a **Path** because we'll use it for interact with directories inside our local environment at moment of production chain execution 
 
