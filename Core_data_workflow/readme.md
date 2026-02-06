@@ -1,1 +1,2 @@
-There we'll store our objects with relevant information for use it again in another scripts
+###INTRODUCTION
+ This directory contains the **core data for our whole production chain** exactly **time stamps data sets** and all data sets in *.pkl* and *.json* files for **complementary videos**, **complementary songs**, **shorts timestamps for extraction**

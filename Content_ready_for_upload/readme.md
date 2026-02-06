@@ -1,4 +1,4 @@
-# CONTENT UPLOAD STATION:
+#CONTENT UPLOAD STATION:
 
 ##INTRODUCTION:
  The main role of this directory it's exclusively accept .mp4 files, that will be last result of whole chain production, videos have to get the required flags for be allowed in this directory, this is for keep the whole process clean
