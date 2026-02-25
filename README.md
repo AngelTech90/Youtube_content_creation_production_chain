@@ -10,10 +10,21 @@
  
  And in some precise cases we are using **Node.js scripting** for some specific resources that we **can't manage with python**
 
+ Most important feat for this project is build it with **0 budget**
 
-### Layers of development:
+### Introduction to our project architecture:
+ In first place we was using a stage architecture, we basically separate everything in 1 directory and then we start adding modules and  directories
 
-**In this project** layers are structured groups of python modules for **macro tasks** this tasks follow into micro tasks execution per module
+ Core change it's that now we have **layers of modules**, **stations for files**,**Core_data** and **deployment hall**
+
+ Inside **layers** we got all related with python modules and **tasks** of production chain.
+
+ Inside **stations** we got all related with **multimedia** required for processing inside production chain
+
+ Inside **Core_data** we got **most_important_part** of our project, this is because here we'll store and manage **our data sets and prompt md and txt files for AI**.
+ 
+### Layers of modules development:
+ **In this project** layers are structured groups of python modules for **macro tasks** this tasks follow into micro tasks execution per module
 
 ##### Raw data extraction layer:
  Inside this layer we focus on extraction of every single python module that separate **Video, audio and transcription** per original video and required data for production chain as **data sets time stamps** .pkl and json files etc.
@@ -38,7 +49,7 @@
  Then we'll add presentation as an overlay in video using moviePy
 
 ##### Content uploading layer:
- 
+ There we'll have all modules releated with **main youtube videos upload** and **youtube shorts uploading**
 
 ##### Backup layer strategy:
  We'll code some modules layer , using python modules for created absorb the tasks that main daily usage modules couldn't afford for **usage limits**, and we'll coordinate all this modules like this:
@@ -48,3 +59,14 @@
  **Layer modules approach** inside this backup layer we'll contain next python modules: **Code_generation-tasks-assistant, Redaction_content_generation-tasks-assistant, Multi-modal_generation-tasks-assistant** 
 
  Every single of this module will be present but not running initially in production chain, if we got a failure in middle of production for usage limits of one of our models we'll use this backups assitants 
+
+
+### Stations for files:
+ Inside this stations we'll have sub directories that will manage role of **filter using as reference type of file and flag in file name** for exclude, remove or check using **bash scripts inside every sub directory**  for example:
+
+**-A .mp3 file that have _enhanced_ flag**
+**-A .mp4 file that have _titleReady_ _descriptionReady_ _hashtagsReady_** 
+**- A .mp4 file that have _subtitlesReady_ flag **
+**- A .pkl or .json file that have _codeGeneration_ _shortExtraction_ _subtitlesIndexing_  **
+
+###### 

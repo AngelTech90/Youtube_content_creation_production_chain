@@ -55,7 +55,7 @@ class CleanVoiceEnhancer:
 
     def get_local_mp3s(self) -> List[Path]:
         """Find all MP3 files in input directory."""
-        files = list(self.DEFAULT_INPUT_DIR.rglob("*.mp3"))
+        files = lsist(self.DEFAULT_INPUT_DIR.rglob("*.mp3"))
         if not files:
             print(f"No MP3 files found in {self.DEFAULT_INPUT_DIR}")
         return files
